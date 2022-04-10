@@ -4,7 +4,7 @@ metadata:
   name: flask-test-service
 spec:
   selector:
-    app: flask-test-app
+    app: flask-app
   ports:
     - protocol: "TCP"
       port: 6000
@@ -15,19 +15,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-test-app
+  name: flask-app
 spec:
   selector:
     matchLabels:
-      app: flask-test-app
+      app: flask-app
   replicas: 5
   template:
     metadata:
       labels:
-        app: flask-test-app
+        app: flask-app
     spec:
       containers:
-        - name: flask-test-app
+        - name: flask-app
           image: docker.io/kalturadock/flask-kubernetes-deploy
           imagePullPolicy: IfNotPresent
           ports:
