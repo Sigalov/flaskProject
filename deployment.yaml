@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: docker.io/kalturadock/flask-kubernetes-deploy
+          image: kalturadock/flask-kubernetes-deploy
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
